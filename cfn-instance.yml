@@ -19,7 +19,7 @@ Resources:
       Tags:
         - Key: Name
           Value: WebServerSecGrp
-  WebServerHostApache:
+  WebServerHostNginx:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: ami-02e136e904f3da870
@@ -47,5 +47,5 @@ Outputs:
   WebsiteURL:
     Value: !Sub 
       - http://${PublicAddress}
-      - PublicAddress: !GetAtt WebServerHostApache.PublicDnsName
+      - PublicAddress: !GetAtt WebServerHostNginx.PublicDnsName
     Description: My Portfolio Page URL
