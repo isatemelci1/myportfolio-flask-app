@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/mystyle.css') }}">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>My Portfolio</title>
+
+	<!-- Import my font from Google Fonts Api -->
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- Project Header -->
+	<header class="header">
+		<div class="header-container">
+			<div class="header-container-logo">
+				<a href="#">
+					<span>İsa TEMELCİ</span>
+				</a>
+			</div>
+
+			<nav class="header-container-menu">
+				<label for="menu">
+					<input id="menu" name="menu" type="checkbox" />
+					<img class="icon icon-menu" src="https://cdn.pixabay.com/photo/2017/11/07/07/06/menu-2925825_960_720.png" alt="icon menu">
+					<div class="header-container-links">
+						<a href="#about-me">About Me</a>
+						<a href="#education">Education</a>
+						<a href="#skills">Skills</a>
+						<a href="#experience">Experience</a>
+						<a href="#references">References</a>
+						<a href="#contact-me">Contact Me</a>
+					</div>
+				</label>
+			</nav>
+		</div>
+	</header>
+	<!-- End of project header -->
+
+	<!-- Project details -->
+	<!-- Profile picture and name div -->
+	<main class="main-page">
+		<div>
+			<img id="profile-image" src="{{url_for('static', filename='profile.jpg')}}" alt="profile image">
+			<h2>İsa Temelci</h2>
+			<h3>Software Developer</h3>
+		</div>
+		<!-- End of profile picture and name div -->
+
+		<!-- About me div -->
+		<div id="about-me" class="informations">
+
+			<h2>About Me</h2>
+			<p>Hello. I am İsa Temelci. I am software developer. And currently, i want to become a web developer. I am working on being a good web developer. I would like to be a skilled <span class="bold-span">full stack web developer.</span> That's why i wanted to develop my first porject as my resume. <br> I am quick learner and passion about learning web technologies. I can be a good team member, and can give high performance for projects. I can easily work with people.</p>
+
+
+		</div>
+		<!-- End of About me div -->
+
+		<!-- Education informations div -->
+		<div id="education" class="informations">
+			<h2>Education</h2>
+			<table class="education-table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Year</th>
+						<th>School Name</th>
+						<th>Department</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>University</td>
+						<td>2007-2013</td>
+						<td>Eskişehir Osmangazi University-Turkey</td>
+						<td>Computer Engineering</td>
+					</tr>
+					<tr>
+						<td>University</td>
+						<td>2012-2013</td>
+						<td>Vilnius Gediminas Technical University-Lithuania</td>
+						<td>Computer Engineering</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- End of education informations div -->
+
+		<!-- Technical skills div -->
+		<div id="skills" class="informations">
+			<h2>Skills</h2>
+			<ul>
+				<li><span class="bold-span">DEVELOPMENT TOOLS : </span>Java EE&SE (Web and Android), Hibernate, HTML, CSS -> In Good level</li>
+				<li><span class="bold-span">DATABASE TOOLS : </span>PostgreSQL, Oracle DB, MS Access, MySQL, MSSQL -> In Basic Level for development</li>
+				<li><span class="bold-span">MS OFFICE TOOLS : </span>MS Word, MS Excel, MS Powerpoint, MS Outlook -> In Good Level</li>
+				<li><span class="bold-span">OPERATING SYSTEMS : </span>Windows, Linux Debian Distributions, Mac OSX -> In Good Level</li>
+			</ul>
+		</div>
+		<!-- End of Technical skills div -->
+
+		<!-- Work experience div -->
+		<div id="experience" class="informations">
+			<h2>Experience</h2>
+			<div class="exp-head-div">
+				<p class="exp-head-paragraph"><span class="bold-span">Turkish Naval Forces HQ. / Ankara
+						<br>Officer (Software Developer, Database Management Off.) <br> 9/2013 – 9/2016</span>
+				</p>
+
+				<p class="exp-paragraph">Developed enterprise softwares for the navy. Designed and created databases for the projects. Managing projects and preparing the reports for them. Organizing meeting with the customers and record their feedbacks. Organizing meeting to send these feedbacks to the developers and solve the problems if occurs. Taking part in the whole project from start to end.</p>
+			</div>
+
+			<div class="exp-head-div">
+				<p class="exp-head-paragraph"><span class="bold-span">Eskisehir Osmangazi University / Eskisehir
+						<br>Software Developer<br> 10/2012 – 2/2013</span>
+				</p>
+
+				<p class="exp-paragraph">Developed software for the need of university stuff. Developed a mobile application for the university.</p>
+			</div>
+
+			<div class="exp-head-div">
+				<p class="exp-head-paragraph"><span class="bold-span">Vistula University / Warsaw - POLAND
+						<br>Software Developer<br> 6/2012 – 9/2012</span>
+				</p>
+
+				<p class="exp-paragraph">Studied as an intern student at the university. Developed a mobile application and a library automation system for the university.</p>
+			</div>
+
+		</div>
+		<!-- End of Work experience div -->
+
+		<!-- References div -->
+		<div id="references" class="informations">
+			<h2>References</h2>
+			<p>References will be available soon...<span style="color:white;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span></p>
+		</div>
+		<!-- End of References div -->
+
+		<!-- Contact Me div -->
+		<div id="contact-me" class="informations">
+			<h2>Contact Me</h2>
+			<ul class="cm-ul">
+				<li><img class="cm-icons" src="https://cdn.iconscout.com/icon/free/png-256/account-avatar-profile-human-man-user-30448.png" alt="name icon"> Name</li>
+				<li><img class="cm-icons" src="http://cdn.onlinewebfonts.com/svg/img_202644.png" alt="subject icon"> Subject</li>
+				<li><img class="cm-icons" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/mail-1757935-1498112.png" alt="email icon"> Your E-Mail</li>
+				<li style="height:150px;">Your Message</li>
+
+				<li><img class="cm-icons" src="https://www.vhv.rs/dpng/d/184-1848924_send-message-send-message-icon-svg-hd-png.png" alt="send icon"><a href="#">Send</a></li>
+			</ul>
+
+			<p><span style="color:white;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span></p>
+
+		</div>
+		<!-- End of Contact me div -->
+	</main>
+
+	<!-- Project Footer -->
+	<footer class="footer-class">
+		<h2 id="footer">&copy; 2021 Designed by iTEM</h2>
+	</footer>
+	<!--  End of project footer -->
+</body>
+
+</html>

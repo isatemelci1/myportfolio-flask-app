@@ -1,0 +1,263 @@
+/* General Rules for html page */
+html {
+	box-sizing: border-box;
+	font-size: 75%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-size: 1.5rem;
+	background-color: #b3ffb3;
+	font-family: "Rubik", sans-serif;
+	width: 60%;
+	margin: auto;
+}
+/* End of general rules */
+
+/* Header css rules */
+.header {
+	position: sticky;
+	top: 0rem;
+	bottom: 50rem;
+	z-index: 100;
+	margin: 0;
+}
+
+.header-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: sticky;
+	top: 0;
+	height: 6rem;
+	padding: 0 2rem;
+	background-color: orange;
+}
+
+.header-container a {
+	text-decoration: none;
+	color: black;
+}
+
+.header-container-logo {
+	font-weight: bolder;
+	color: white;
+	font-size: 2.6rem;
+}
+
+.header-container-logo:hover span {
+	color: green;
+}
+
+.header-container-menu {
+	margin-right: -1rem;
+}
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	stroke-width: 0;
+}
+
+.header-container-menu .icon-menu {
+	display: none;
+	background-color: transparent;
+	border: none;
+	font-size: 3rem;
+	cursor: pointer;
+}
+
+.header-container-menu input[type="checkbox"] {
+	display: none;
+	position: absolute;
+	top: -100rem;
+	right: -100rem;
+}
+
+.header-container-links a {
+	position: relative;
+	display: inline-block;
+	line-height: 4rem;
+	padding: 0 1rem;
+}
+
+.header-container-links a:hover {
+	color: white;
+}
+/* End of header css rules */
+
+/* Rules for H2 */
+h2 {
+	color: blue;
+	text-align: center;
+}
+
+.basic-info {
+	color: blue;
+	text-align: center;
+	padding-top: 2rem;
+}
+
+h3 {
+	color: black;
+	text-align: center;
+	font-size: 2.4rem;
+}
+
+/* Rules for footer */
+#footer {
+	color: black;
+	font-family: cursive;
+	padding-top: 1rem;
+	font-size: 1.5rem;
+}
+
+.footer-class {
+	background-color: orange;
+	margin-bottom: -5rem;
+	height: 5rem;
+}
+
+/* End of footer rules */
+
+/* Rules for profile image */
+#profile-image {
+	width: 180px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	display: block;
+	border-radius: 50%;
+}
+
+/* Rules for CV detail divs */
+.informations {
+	box-shadow: 0 0 10px 5px;
+	border-radius: 1rem;
+	display: inline-block;
+	margin-top: 3rem;
+	background-color: #fff;
+	line-height: 3rem;
+	padding-top: 4.5rem;
+	padding-left: 4.5rem;
+	padding-right: 4.5rem;
+	padding-bottom: 3rem;
+	justify-content: center;
+}
+
+.bold-span {
+	font-weight: bolder;
+}
+
+.education-table {
+	padding: 3.8rem;
+	align-self: center;
+}
+.education-table td {
+	padding-right: 1rem;
+	text-align: center;
+}
+
+ul {
+	list-style: gregorian;
+	background-color: #fff9f9;
+	border: 0.2rem dotted #c8b5b5;
+	border-radius: 1rem;
+}
+ul li {
+	background-color: #fffded;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.exp-head-div {
+	line-height: 2.5rem;
+	border: 0.2rem dotted #fffded;
+}
+
+.exp-head-paragraph {
+	background-color: #70e500;
+	border-radius: 4px;
+}
+
+.exp-paragraph {
+	margin-top: -1.2rem;
+	border-radius: 4px;
+}
+
+.cm-icons {
+	width: 2rem;
+}
+
+.cm-ul {
+	list-style: none;
+	margin: auto;
+	width: 60%;
+}
+
+.cm-ul li {
+	background-color: #d9d9d9;
+	margin-top: 1.5rem;
+	border-radius: 10px;
+	margin-right: 3rem;
+}
+
+.cm-ul li a {
+	text-decoration: none;
+	margin-left: 5rem;
+	font-weight: bold;
+}
+/* End of rules for CV details div */
+
+/* Rules for Responsive page */
+
+/* Media Queries */
+
+@media (max-width: 40rem) {
+	body {
+		width: 100%;
+	}
+
+	.header-container-links {
+		display: none;
+	}
+
+	.header-container-links a {
+		display: inline-block;
+	}
+
+	.header-container-menu .icon-menu {
+		display: block;
+	}
+
+	.header-container-menu #menu:checked ~ .header-container-links {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		position: absolute;
+		width: 100%;
+		left: 0;
+		top: 6.4rem;
+		background-color: #ff9b00;
+	}
+
+	.informations {
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-bottom: 2rem;
+	}
+
+	#education {
+		padding-left: 0rem;
+		padding-right: 0rem;
+		padding-bottom: 2rem;
+	}
+}
+
+@media (min-width: 40rem) {
+	.bold-span {
+		font-weight: bolder;
+	}
+}
+/* End of rules for Responsive page */
