@@ -1,32 +1,15 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: |
-  This CloudFormation Template was written for running My Portfolio Page on EC2. My Portfolio will be deployed on Amazon Linux 2 (ami-02e136e904f3da870) EC2 Instance with custom security group which allows http connections on port 80 and ssh port 22 from anywhere. My Portfolio page 
-  is downloaded from my Public Github repository, then deployed on Nginx Web Server.
+  This CloudFormation Template was written for running My Portfolio Page on EC2.
 Resources:
-  WebServerSecGrp:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupDescription: Enable HTTP for Nginx Web Server and enable SSH for secure connection.
-      SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: 80 
-          ToPort: 80 
-          CidrIp: 0.0.0.0/0 
-        - IpProtocol: tcp 
-          FromPort: 22 
-          ToPort: 22
-          CidrIp: 0.0.0.0/0 
-      Tags:
-        - Key: Name
-          Value: WebServerSecGrp
   WebServerHostNginx:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: ami-02e136e904f3da870
       InstanceType: t2.micro
       KeyName: temelcikey
-      SecurityGroupIds:
-        - !Ref WebServerSecGrp
+      SecurityGroups:
+        - TemelciSecGroup
       Tags:
         - Key: Name 
           Value: !Sub Web Server of  ${AWS::StackName} Stack
@@ -35,11 +18,13 @@ Resources:
           !Sub |
             #!/bin/bash
             yum update -y 
-            yum install nginx -y
+            amazon-linux-extras install nginx1 -yy
+            yum install pip -y
             pip install Flask -y
             pip install flask-cors -y
+            yum install git -y
             FOLDER="https://github.com/isatemelci1/myportfolio-flask-app.git"
-            cd /var/www/html/
+            cd /usr/share/nginx/html
             git clone $FOLDER
             systemctl start nginx
             systemctl enable nginx
