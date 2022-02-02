@@ -18,14 +18,22 @@ Resources:
           !Sub |
             #!/bin/bash
             yum update -y 
-            amazon-linux-extras install nginx1 -yy
+            amazon-linux-extras install nginx1 -y
             yum install pip -y
             pip install Flask -y
             pip install flask-cors -y
             yum install git -y
-            FOLDER="https://github.com/isatemelci1/myportfolio-flask-app.git"
+            FOLDER="https://raw.githubusercontent.com/isatemelci1/myportfolio-flask-app/main"
             cd /usr/share/nginx/html
-            git clone $FOLDER
+            wget $FOLDER/app.py
+            mkdir /static/css
+            cd /static/css
+            wget $FOLDER/static/css/mystyle.css
+            cd ..
+            wget $FOLDER/static/profile.jpg
+            cd ..
+            mkdir /templates && cd templates
+            wget $FOLDER/templates/index.html
             systemctl start nginx
             systemctl enable nginx
 Outputs:
