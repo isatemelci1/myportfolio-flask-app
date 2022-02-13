@@ -43,4 +43,3 @@ Outputs:
       - http://${PublicAddress}
       - PublicAddress: !GetAtt WebServerHostNginx.PublicDnsName
     Description: My Portfolio Page URL
-    
