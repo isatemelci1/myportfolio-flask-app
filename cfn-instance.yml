@@ -20,7 +20,7 @@ Resources:
             yum update -y 
             amazon-linux-extras install nginx1 -y
             yum install pip -y
-            pip install Flask
+            pip3 install flask
             FOLDER="https://raw.githubusercontent.com/isatemelci1/myportfolio-flask-app/main"
             cd /usr/share/nginx/html
             wget $FOLDER/app.py
@@ -35,6 +35,8 @@ Resources:
             cd ..
             mkdir /templates && chmod -R 777 /usr/share/nginx/html/templates && cd templates
             wget $FOLDER/templates/index.html
+            cd ..
+            python app.py
             systemctl start nginx
             systemctl enable nginx
 Outputs:
