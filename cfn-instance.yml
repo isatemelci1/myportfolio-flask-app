@@ -19,7 +19,7 @@ Resources:
             #!/bin/bash
             yum update -y 
             amazon-linux-extras install nginx1 -y
-            yum install pip -y
+            yum install pip3 -y
             pip3 install flask
             FOLDER="https://raw.githubusercontent.com/isatemelci1/myportfolio-flask-app/main"
             cd /usr/share/nginx/html
@@ -36,7 +36,7 @@ Resources:
             mkdir /templates && chmod -R 777 /usr/share/nginx/html/templates && cd templates
             wget $FOLDER/templates/index.html
             cd ..
-            python app.py
+            python3 app.py
             systemctl start nginx
             systemctl enable nginx
 Outputs:
@@ -45,3 +45,4 @@ Outputs:
       - http://${PublicAddress}
       - PublicAddress: !GetAtt WebServerHostNginx.PublicDnsName
     Description: My Portfolio Page URL
+    
